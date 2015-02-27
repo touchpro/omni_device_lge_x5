@@ -1,0 +1,8 @@
+#!/system/bin/sh
+mount -o remount,rw /system
+chmod 644 /system/etc/firmware/keymaster.mdt
+chmod 644 /system/etc/firmware/keymaster.b00
+chmod 644 /system/etc/firmware/keymaster.b01
+chmod 644 /system/etc/firmware/keymaster.b02
+chmod 644 /system/etc/firmware/keymaster.b03
+mount -o remount,ro /system
