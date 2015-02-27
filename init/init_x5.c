@@ -83,4 +83,14 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_set("ro.nfc.port", "I2C");
     property_set("persist.radio.multisim.config", "");
     property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("ro.telephony.default_cdma_sub", "1");
+    property_set("ro.telephony.default_network", "8");
+    property_set("ro.cdma.home.operator.numeric", "310120");
+    property_set("gsm.sim.operator.numeric", "310120");
+    property_set("gsm.operator.numeric", "310120");
+    property_set("ro.cdma.home.operator.alpha", "Virgin Mobile");
+    property_set("gsm.sim.operator.alpha", "Virgin Mobile");
+    property_set("gsm.operator.alpha", "310120");
+    property_set("ro.cdma.subscribe_on_ruim_ready", "true");
+    property_set("telephony.sms.pseudo_multipart", "1");
 }

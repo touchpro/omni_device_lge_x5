@@ -90,7 +90,7 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Use qcom power hal
-#TARGET_POWERHAL_VARIANT := qcom
+TARGET_POWERHAL_VARIANT := qcom
 #TARGET_USES_CPU_BOOST_HINT := true
 
 TARGET_HW_DISK_ENCRYPTION := true
@@ -151,7 +151,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 # TWRP Recovery
-TARGET_RECOVERY_FSTAB := device/lge/x5/rootdir/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/lge/x5/recovery.fstab
 RECOVERY_FSTAB_VERSION := 2
 DEVICE_RESOLUTION := 540x960
 TW_FLASH_FROM_STORAGE := true
@@ -177,5 +177,56 @@ TW_NO_REBOOT_BOOTLOADER := true
 RECOVERY_SDCARD_ON_DATA := true
 
 # Nfc
-BOARD_NFC_CHIPSET := pn547
+BOARD_NFC_HAL_SUFFIX := x5
+BOARD_NFC_CHIPSET := pn544
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+	device/lge/x5/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+	adbd.te \
+	app.te \
+	bluetooth_loader.te \
+	bridge.te \
+	camera.te \
+	device.te \
+	dhcp.te \
+	dnsmasq.te \
+	domain.te \
+	drmserver.te \
+	file_contexts \
+	file.te \
+	hostapd.te \
+	init_shell.te \
+	init.te \
+	libqc-opt.te \
+	mediaserver.te \
+	mpdecision.te \
+	netd.te \
+	netmgrd.te \
+	nfc.te \
+	property_contexts \
+	property.te \
+	qcom.te \
+	qmux.te \
+	radio.te \
+	rild.te \
+	rmt.te \
+	sdcard_internal.te \
+	sdcardd.te \
+	sensors.te \
+	shell.te \
+	surfaceflinger.te \
+	system.te \
+	tee.te \
+	te_macros \
+	thermald.te \
+	ueventd.te \
+	vold.te \
+	wpa_supplicant.te \
+	zygote.te
+
+ifneq ($(TARGET_BUILD_VARIANT),user)
+	BOARD_SEPOLICY_UNION += su.te
+endif

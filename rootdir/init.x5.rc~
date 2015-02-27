@@ -63,9 +63,6 @@ on boot
 	chown system system /sys/devices/f9925000.i2c/i2c-2/2-0032/leds/B/led_current
 #LGE_CHANGE_E, for LP5521 RGB_LED
 
-# For NFC
-	symlink /dev/pn547 /dev/pn544
-
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start

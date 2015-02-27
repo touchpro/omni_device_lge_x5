@@ -27,6 +27,11 @@ persist.radio.msgtunnel.start=false
 # LGE_CHANGE_S by.mun@lge.com 2013-08-14 turn off CdmaLTEPhone for X5
 telephony.lteOnCdmaDevice=1
 ro.telephony.default_network=8
+ro.cdma.home.operator.numeric=311490
+ro.cdma.home.operator.alpha=Virgin Mobile US
+gsm.sim.operator.alpha=Virgin Mobile US
+gsm.sim.operator.numeric=311490
+gsm.sim.operator.iso-country=US
 
 ro.ril.enable.amr.wideband=1
 ro.lge.proximity.delay=25
