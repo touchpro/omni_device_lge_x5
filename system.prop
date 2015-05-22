@@ -19,24 +19,20 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-persist.radio.msgtunnel.start=false
+persist.radio.msgtunnel.start=true
 # Start in cdma mode
 #
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
 # LGE_CHANGE_S by.mun@lge.com 2013-08-14 turn off CdmaLTEPhone for X5
 telephony.lteOnCdmaDevice=1
+telephony.lteOnGsmDevice=1
+keyguard.no_require_sim=true
+ro.telephony.ril.v3=qcomuiccstack
 ro.telephony.default_network=8
-ro.cdma.home.operator.numeric=311490
-ro.cdma.home.operator.alpha=Virgin Mobile US
-gsm.sim.operator.alpha=Virgin Mobile US
-gsm.sim.operator.numeric=311490
-gsm.sim.operator.iso-country=US
-
 ro.ril.enable.amr.wideband=1
 ro.lge.proximity.delay=25
 ro.telephony.call_ring.delay=0
-
 persist.radio.adb_log_on=1
 persist.radio.qcril_am_enabled=1
 wlan.chip.vendor=qcom
@@ -93,14 +89,8 @@ ro.config.vc_call_vol_steps=6
 persist.data.sbp.update=0
 persist.radio.rat_on=legacy
 ro.lge.proximity.delay=25
-ro.telephony.ril_class=LgeX5RIL
-ro.nfc.port=I2C
+ro.telephony.ril_class=LgeLteRIL
 ro.telephony.default_cdma_sub=1
-ro.cdma.home.operator.numeric=310120
-gsm.sim.operator.numeric=310120
-gsm.operator.numeric=310120
-ro.cdma.home.operator.alpha=Virgin Mobile
-gsm.sim.operator.alpha=Virgin Mobile
-gsm.operator.alpha=310120
 ro.cdma.subscribe_on_ruim_ready=true
 telephony.sms.pseudo_multipart=1
+ro.nfc.port=I2C

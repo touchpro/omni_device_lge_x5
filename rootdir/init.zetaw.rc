@@ -105,10 +105,6 @@ on post-fs
 	chmod 664 /sys/devices/virtual/input/lge_touch/ime_status
 	chown system system /sys/devices/virtual/input/lge_touch/ime_status
 
-# LGE_CHANGE_S, [LGE_DATA][LGP_DATA_TCPIP_NSRM], heeyeon.nah@lge.com, 2012-05-22
-export LD_PRELOAD /vendor/lib/libNimsWrap.so
-# LGE_CHANGE_E, [LGE_DATA][LGP_DATA_TCPIP_NSRM], heeyeon.nah@lge.com, 2012-05-22
-# LGE_CHANGE_S
 # enable chargerlogo
 on chargerlogo
    stop bootlogo

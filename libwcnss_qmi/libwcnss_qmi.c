@@ -16,7 +16,7 @@
 
 //#define LOG_NDEBUG 0
 
-#define LOG_TAG "wcnss_w7"
+#define LOG_TAG "wcnss_x5"
 
 #include <cutils/log.h>
 #include <stdio.h>

@@ -53,7 +53,12 @@ vendor/lib/libacdbloader.so
 lib/libtinyalsa.so
 lib/libtinycompress.so
 lib/hw/audio.primary.msm8226.so
+bin/fmconfig
+bin/fmfactorytest
+bin/fmfactorytestserver
 bin/fm_qsoc_patches
+bin/ftmdaemon
+bin/ftm_ptt
 
 # Listen service
 vendor/lib/liblistenhardware.so
@@ -121,13 +126,6 @@ vendor/lib/libC2D2.so
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/libwvm.so
 
-# Bluetooth
-bin/bdaddr_loader
-bin/btnvtool
-bin/hci_qcomm_init
-lib/libatd_corelib.so
-lib/libbtnv.so
-lib/liblgftmitem.so
 
 # Camera
 bin/mm-qcamera-daemon
@@ -245,15 +243,16 @@ bin/sensors.qcom
 lib/hw/lights.msm8226.so
 vendor/lib/libbmc050.so
 
-# Other
+#NFC
 vendor/firmware/libpn547_fw.so
+
+# Other
 vendor/lib/libQSEEComAPI.so
--bin/irsc_util
 bin/mm-pp-daemon
 vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-abl.so
--bin/ptt_socket_app
--lib/libqsap_sdk.so
+bin/ptt_socket_app
+lib/libqsap_sdk.so
 bin/ims_rtp_daemon
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-rtpsl.so
@@ -264,6 +263,7 @@ vendor/lib/lib-dplmedia.so
 
 # IRDA
 bin/irrcServer
+bin/irsc_util
 lib/libirrc.so
 lib/libirrcClient.so
 lib/libirrcJni.so
@@ -273,15 +273,19 @@ lib/liblgewg.so
 -media/audio/ui/IR_normal.ogg
 
 # We need it?
+# Misc...
+bin/cnd
+bin/port-bridge
+bin/riva_ramdump
+bin/imsdatadaemon
+bin/imsqmidaemon
+bin/mpdecision
+bin/bnrd
+bin/ssr_diag
+vendor/lib/hw/flp.default.so
+vendor/lib/libdisp-aba.so
+vendor/lib/libcneapiclient.so
+lib/libcnefeatureconfig.so
 
--bin/port-bridge
--bin/riva_ramdump
--bin/imsdatadaemon
--bin/imsqmidaemon
--bin/bnrd
--bin/ssr_diag
--vendor/lib/hw/flp.default.so
--vendor/lib/libdisp-aba.so
--vendor/lib/libcneapiclient.so
--lib/libcnefeatureconfig.so
+lib/libbinder.so
 
