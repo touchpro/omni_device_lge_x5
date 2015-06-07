@@ -236,7 +236,6 @@ PRODUCT_PACKAGES += \
     lights.msm8226 \
     nfc.msm8226 \
     memtrack.msm8226 \
-    keystore.msm8226 \
     power.msm8226
 
 # QRNG
