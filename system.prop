@@ -6,8 +6,20 @@
 persist.sys.usb.config=mtp,adb
 
 # Use reference RIL for initial bringup
-rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+# Radio
 rild.libargs=-d /dev/smd0
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+ro.cdma.home.operator.numeric=310000
+ro.cdma.home.operator.alpha=Sprint
+telephony.lteOnCdmaDevice=1
+ro.telephony.default_network=8
+ro.ril.def.preferred.network=8
+ril.subscription.types=NV,RUIM
+ro.cdma.subscribe_on_ruim_ready=true
+persist.radio.no_wait_for_card=1
+keyguard.no_require_sim=true
+telephony.sms.pseudo_multipart=1
+DEVICE_PROVISIONED=1
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
 persist.rild.nitz_long_ons_1=
@@ -17,8 +29,6 @@ persist.rild.nitz_short_ons_0=
 persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
-ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
 persist.radio.msgtunnel.start=true
 # Start in cdma mode
 #
@@ -26,10 +36,7 @@ persist.radio.msgtunnel.start=true
 # System prop to turn on CdmaLTEPhone always
 # LGE_CHANGE_S by.mun@lge.com 2013-08-14 turn off CdmaLTEPhone for X5
 telephony.lteOnCdmaDevice=1
-telephony.lteOnGsmDevice=1
 keyguard.no_require_sim=true
-ro.telephony.ril.v3=qcomuiccstack
-ro.telephony.default_network=8
 ro.ril.enable.amr.wideband=1
 ro.lge.proximity.delay=25
 ro.telephony.call_ring.delay=0

@@ -15,7 +15,7 @@
 #
 
 PRODUCT_COPY_FILES += \
-    device/lge/x5/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
+device/lge/x5/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
@@ -32,6 +32,11 @@ $(call inherit-product, vendor/omni/config/common.mk)
 
 # Specific overlay
 DEVICE_PACKAGE_OVERLAYS += device/lge/x5/overlay
+
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.device=x5 \
+    ro.product.model=LGLS740
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -101,7 +106,8 @@ PRODUCT_COPY_FILES += \
     device/lge/x5/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     device/lge/x5/prebuilt/etc/quipc.conf:system/etc/quipc.conf \
     device/lge/x5/prebuilt/etc/init.d/10keymaster:system/etc/init.d/10keymaster \
-
+    device/lge/x5/prebuilt/etc/init.d/10lightfixer:system/etc/init.d/10lightfixer \
+    
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/lge/x5/rootdir/fstab.x5:root/fstab.x5 \
@@ -131,6 +137,7 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio.primary.msm8226 \
     audio_policy.msm8226 \
     audio.a2dp.default \
     audio.usb.default \
@@ -140,6 +147,9 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcompostprocbundle \
     libqcomvoiceprocessing \
+    libaudioroute \
+    libtinyalsa \
+    libtinycompress \
     tinycap \
     tinymix \
     tinypcminfo \
@@ -158,7 +168,8 @@ PRODUCT_PACKAGES += \
     libbson \
     libcurl \
     tcpdump \
-    Torch
+    Torch \
+    libxml2
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -188,6 +199,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     p2p_supplicant_overlay.conf \
     wpa_supplicant_overlay.conf \
+    libwpa_client \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf \
     libwcnss_qmi \
 
 # Charger
@@ -219,8 +234,9 @@ PRODUCT_PACKAGES += \
     gralloc.msm8226 \
     hwcomposer.msm8226 \
     lights.msm8226 \
-    memtrack.msm8226 \
     nfc.msm8226 \
+    memtrack.msm8226 \
+    keystore.msm8226 \
     power.msm8226
 
 # QRNG
@@ -367,6 +383,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.modem.no_wdog_chk=1 \
     persist.call_recording.enabled=1
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
+
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc \
@@ -391,7 +410,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.nfc.fw_download=true \
 	debug.nfc.fw_boot_download=false \
 	debug.nfc.se=true \
-	ro.nfc.port=I2C	
+	ro.nfc.port=I2C
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -409,9 +428,6 @@ PRODUCT_MANUFACTURER := LGE
 OMNI_DEVICE := x5
 PRODUCT_RELEASE_NAME := LGLS740
 
-# Boot animation
-TARGET_SCREEN_WIDTH := 540
-TARGET_SCREEN_HEIGHT := 960
-
 $(call inherit-product, vendor/lge/x5/x5-vendor.mk)
+
 
